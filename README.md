@@ -433,6 +433,8 @@ This policy blocks agent identities with a high risk level from accessing resour
 
 2. Error: Policy contains invalid applications: ServicePrincipalNotFound. Some ServicePrincipals might be missing in your tenant. You can manually create these by using `New-MgServicePrincipal -AppId *****-*****-******` |
 
+3. Windows first sign-in restore fails with error _You can’t get there from here. This application contains sensitive information and can only be accessed from devices or client applications that meet management compliance policy._. This is blocked by policy CA205 (CA205-Internals-BaseProtection-AnyApp-Windows-CompliantorAADHJ). Add an exclusion for **Microsoft Activity Feed Service** (d32c68ad-72d2-4acb-a0c7-46bb2cf93873) in this policy.
+
 ## Importing the baseline
 
 These PowerShell scripts are using Microsoft Authentication Library (MSAL), Microsoft Graph APIs and Azure Management APIs to manage objects in Intune and Azure. The scripts has a simple WPF UI and it supports operations like Export, Import, Copy, Download, Compare etc.
